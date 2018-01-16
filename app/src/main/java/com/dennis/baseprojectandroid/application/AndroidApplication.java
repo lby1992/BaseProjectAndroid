@@ -8,10 +8,28 @@ import android.app.Application;
 
 public class AndroidApplication extends Application {
 
+    private AppComponent appComponent;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
         //Do something while initialing application.
+        createAppComponent();
+    }
+
+    private void createAppComponent() {
+        AppComponent appComponent = DaggerAppComponent.builder()
+                .build();
+
+        setAppComponent(appComponent);
+    }
+
+    public void setAppComponent(AppComponent appComponent) {
+        this.appComponent = appComponent;
+    }
+
+    public AppComponent getAppComponent() {
+        return appComponent;
     }
 }
