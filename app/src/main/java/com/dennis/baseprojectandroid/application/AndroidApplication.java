@@ -2,6 +2,9 @@ package com.dennis.baseprojectandroid.application;
 
 import android.app.Application;
 
+import com.dennis.baseprojectandroid.core.injection.app.AppComponent;
+import com.dennis.baseprojectandroid.core.injection.app.DaggerAppComponent;
+
 /**
  * Created by BY on 2018/1/16.
  */
