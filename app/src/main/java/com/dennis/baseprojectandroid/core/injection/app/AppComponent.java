@@ -1,4 +1,4 @@
-package com.dennis.baseprojectandroid.application;
+package com.dennis.baseprojectandroid.core.injection.app;
 
 import javax.inject.Singleton;
 
