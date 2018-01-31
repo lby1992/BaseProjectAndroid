@@ -21,10 +21,17 @@ android {
 }
 
 dependencies {
+    final DAGGER_VERSION = '2.14.1'
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile "com.android.support:appcompat-v7:$SUPPORT_LIB_VERSION"
     testCompile 'junit:junit:4.12'
+
+    // Dagger 2 for dependency injection
+    compile "com.google.dagger:dagger:$DAGGER_VERSION"
+    compile "com.google.dagger:dagger-android-support:$DAGGER_VERSION" // if you use the support libraries
+    annotationProcessor "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
 }
