@@ -3,7 +3,8 @@ package com.dennis.baseprojectandroid.application
 import android.app.Application
 
 import com.dennis.baseprojectandroid.core.injection.app.AppComponent
-//import com.dennis.baseprojectandroid.core.injection.app.DaggerAppComponent
+import com.dennis.baseprojectandroid.core.injection.app.AppModule
+import com.dennis.baseprojectandroid.core.injection.app.DaggerAppComponent
 
 /**
  * Created by BY on 2018/1/16.
@@ -11,7 +12,9 @@ import com.dennis.baseprojectandroid.core.injection.app.AppComponent
 
 class AndroidApplication : Application() {
 
-    var appComponent: AppComponent? = null
+    companion object {
+        @JvmStatic lateinit var appComponent: AppComponent
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -21,9 +24,7 @@ class AndroidApplication : Application() {
     }
 
     private fun createAppComponent() {
-//        var appComponent = DaggerAppComponent.builder()
-//                .build()
-//
-//        appComponent = appComponent
+        AndroidApplication.appComponent = DaggerAppComponent.builder().appModule(AppModule(this)).build()
+        AndroidApplication.appComponent.inject(this)
     }
 }
