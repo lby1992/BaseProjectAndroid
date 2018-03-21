@@ -29,17 +29,24 @@ android {
     sourceSets {
         androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     final DAGGER_VERSION = '2.14.1'
     final ROOM_VERSION = '1.1.0-alpha3'
+    final DATA_BINDING_VERSION = '3.0.1'
+    final RX_JAVA_VERSION = '2.1.11'
+    final RX_ANDROID_VERSION = '2.0.2'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation "com.android.support:appcompat-v7:$SUPPORT_LIB_VERSION"
+    implementation "com.android.support:support-v4:$SUPPORT_LIB_VERSION"
     testImplementation 'junit:junit:4.12'
 
     // Dagger 2 for dependency injection
@@ -54,6 +61,11 @@ dependencies {
     androidTestImplementation "android.arch.persistence.room:testing:$ROOM_VERSION"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$KOTLIN_VERSION"
+
+    kapt "com.android.databinding:compiler:$DATA_BINDING_VERSION"
+
+    implementation "io.reactivex.rxjava2:rxjava:$RX_JAVA_VERSION"
+    implementation "io.reactivex.rxjava2:rxandroid:$RX_ANDROID_VERSION"
 }
 repositories {
     mavenCentral()
