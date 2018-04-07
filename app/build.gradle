@@ -36,7 +36,7 @@ android {
 
 dependencies {
     final DAGGER_VERSION = '2.14.1'
-    final ROOM_VERSION = '1.1.0-alpha3'
+    final ROOM_VERSION = '1.1.0-beta1'
     final DATA_BINDING_VERSION = '3.0.1'
     final RX_JAVA_VERSION = '2.1.11'
     final RX_ANDROID_VERSION = '2.0.2'
@@ -57,7 +57,7 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$DAGGER_VERSION" // if you use the support libraries
     kapt "com.google.dagger:dagger-compiler:$DAGGER_VERSION"
 
-    // Room (use 1.1.0-alpha3 for latest alpha)
+    // Room
     implementation "android.arch.persistence.room:runtime:$ROOM_VERSION"
     kapt "android.arch.persistence.room:compiler:$ROOM_VERSION"
     // Test helpers for Room
