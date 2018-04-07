@@ -40,6 +40,8 @@ dependencies {
     final DATA_BINDING_VERSION = '3.0.1'
     final RX_JAVA_VERSION = '2.1.11'
     final RX_ANDROID_VERSION = '2.0.2'
+    final JUNIT_VERSION = '4.12'
+    final MOCKITO_VERSION = '2.17.0'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -47,7 +49,8 @@ dependencies {
     })
     implementation "com.android.support:appcompat-v7:$SUPPORT_LIB_VERSION"
     implementation "com.android.support:support-v4:$SUPPORT_LIB_VERSION"
-    testImplementation 'junit:junit:4.12'
+    testImplementation "junit:junit:$JUNIT_VERSION"
+    testImplementation "org.mockito:mockito-core:$MOCKITO_VERSION"
 
     // Dagger 2 for dependency injection
     implementation "com.google.dagger:dagger:$DAGGER_VERSION"
