@@ -5,6 +5,7 @@ import android.app.Application
 import com.dennis.baseprojectandroid.core.injection.app.AppComponent
 import com.dennis.baseprojectandroid.core.injection.app.AppModule
 import com.dennis.baseprojectandroid.core.injection.app.DaggerAppComponent
+import com.dennis.baseprojectandroid.core.plugins.setupFabric
 
 /**
  * Created by BY on 2018/1/16.
@@ -21,6 +22,8 @@ class AndroidApplication : Application() {
 
         //Do something while initialing application.
         createAppComponent()
+
+        setupFabric(this)
     }
 
     private fun createAppComponent() {
