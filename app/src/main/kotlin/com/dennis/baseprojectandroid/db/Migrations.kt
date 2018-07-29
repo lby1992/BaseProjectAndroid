@@ -17,6 +17,5 @@ val MIGRATION_1_2: Migration by lazy {
         override fun migrate(database: SupportSQLiteDatabase) {
             database.execSQL("ALTER TABLE books ADD COLUMN pub_year INTEGER")
         }
-
     }
 }

@@ -13,5 +13,5 @@ import dagger.Component
 @Component(modules = [AppModule::class])
 interface AppComponent {
     fun inject(context: Context)
-    fun appDatabase() : AppDatabase
+    fun appDatabase(): AppDatabase
 }

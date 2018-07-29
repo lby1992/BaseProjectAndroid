@@ -10,8 +10,8 @@ import com.dennis.baseprojectandroid.db.entity.BookEntity
 @Dao
 interface BookDao {
     //Querying multiple tables
-    @Query("SELECT * FROM books "
-            + "INNER JOIN users ON users.id = books.user_id "
-            + "WHERE users.full_name LIKE :userName")
+    @Query("SELECT * FROM books " +
+            "INNER JOIN users ON users.id = books.user_id " +
+            "WHERE users.full_name LIKE :userName")
     fun findBooksBorrowedByNameSync(userName: String): List<BookEntity>
 }

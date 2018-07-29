@@ -1,9 +1,12 @@
 package com.dennis.baseprojectandroid.db.dao
 
-import android.arch.persistence.room.*
+import android.arch.persistence.room.Dao
+import android.arch.persistence.room.Delete
+import android.arch.persistence.room.Insert
+import android.arch.persistence.room.OnConflictStrategy
+import android.arch.persistence.room.Query
 import com.dennis.baseprojectandroid.db.entity.UserBasicTuple
 import com.dennis.baseprojectandroid.db.entity.UserEntity
-
 
 /**
  * Created by BY on 2018/3/9.

@@ -9,6 +9,6 @@ import com.dennis.baseprojectandroid.db.entity.UserEntity
  * Created by BY on 2018/3/9.
  */
 @Database(entities = [UserEntity::class], version = 1)
-public abstract class AppDatabase : RoomDatabase() {
-    abstract fun userDao() : UserDao
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun userDao(): UserDao
 }
