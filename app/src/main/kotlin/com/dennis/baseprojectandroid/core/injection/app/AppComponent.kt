@@ -1,6 +1,6 @@
 package com.dennis.baseprojectandroid.core.injection.app
 
-import android.content.Context
+import android.app.Application
 import com.dennis.baseprojectandroid.application.AndroidApplication
 import dagger.BindsInstance
 import dagger.Component
@@ -13,15 +13,16 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
-    AppModule::class
+    AppViewModelModule::class,
+    SplashActivityModule::class
 ])
 interface AppComponent {
-    fun inject(context: Context)
+    fun inject(application: AndroidApplication)
 
     @Component.Builder
     interface Builder {
         @BindsInstance
-        fun application(application: AndroidApplication): Builder
+        fun application(application: Application): Builder
 
         fun build(): AppComponent
     }

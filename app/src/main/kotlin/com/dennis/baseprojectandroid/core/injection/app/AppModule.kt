@@ -5,7 +5,9 @@ import dagger.Module
 /**
  * Created by BY on 2018/3/9.
  */
-@Module
+@Module(includes = [
+    AppViewModelModule::class
+])
 class AppModule(/*private val context: Context*/) {
     //TODO move to DatabaseModule
 //    @Provides

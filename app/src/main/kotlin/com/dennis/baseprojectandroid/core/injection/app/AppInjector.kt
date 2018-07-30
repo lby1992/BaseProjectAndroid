@@ -18,7 +18,7 @@ object AppInjector {
             .build()
             .inject(application)
 
-        application.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks{
+        application.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
             override fun onActivityPaused(activity: Activity) {
             }
 
@@ -44,7 +44,7 @@ object AppInjector {
     }
 
     private fun handleActivityCreated(activity: Activity) {
-        if (activity is HasSupportFragmentInjector) {
+        if (activity is HasSupportFragmentInjector || activity is Injectable) {
             AndroidInjection.inject(activity)
         }
         if (activity is FragmentActivity) {
