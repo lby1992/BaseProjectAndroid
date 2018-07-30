@@ -13,6 +13,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [
     AndroidInjectionModule::class,
+    AppModule::class,
     AppViewModelModule::class,
     SplashActivityModule::class
 ])

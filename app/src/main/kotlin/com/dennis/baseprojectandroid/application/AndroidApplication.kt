@@ -2,6 +2,7 @@ package com.dennis.baseprojectandroid.application
 
 import android.app.Activity
 import android.app.Application
+import com.dennis.baseprojectandroid.core.ClientManager
 import com.dennis.baseprojectandroid.core.injection.app.AppInjector
 import com.dennis.baseprojectandroid.core.plugins.setupFabric
 import dagger.android.AndroidInjector
@@ -18,6 +19,9 @@ class AndroidApplication : Application(), HasActivityInjector {
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
 
+    @Inject
+    lateinit var clientManager: ClientManager
+
     override fun onCreate() {
         super.onCreate()
 
@@ -25,6 +29,8 @@ class AndroidApplication : Application(), HasActivityInjector {
         AppInjector.init(this)
 
         setupFabric(this)
+
+        clientManager.onClientAuthenticated("hello")
     }
 
     override fun activityInjector(): AndroidInjector<Activity> = dispatchingAndroidInjector
